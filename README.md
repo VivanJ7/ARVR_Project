@@ -54,6 +54,7 @@ ARVR_Project_Ini/
 │   └── Videos/
 │
 └── README.md
+```
 ## Screenshots
 
 ### Unity Simulation
@@ -101,3 +102,8 @@ Additional screenshots and demonstration videos are available in:
 Documentation/
 ├── Screenshots/
 └── Videos/
+```
+
+## Academic Project
+
+This project was developed as part of an academic AR/VR course project.
