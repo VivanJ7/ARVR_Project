@@ -36,13 +36,13 @@ Unity communicates with the ESP32 through UDP, transmitting motion values during
 
 The physical setup uses an ESP32 and three servo motors arranged in a three-degree-of-freedom platform.
 
-![Physical Hardware Prototype](Documentation/Screenshots/hardware-prototype.jpg)
+![Physical Hardware Prototype](Documentation/Screenshots/hardware-prototype.png)
 
 ### Complete Setup
 
 The Unity simulation and physical hardware setup working together.
 
-![Complete Hardware and Software Setup](Documentation/Screenshots/complete-setup.jpg)
+![Complete Hardware and Software Setup](Documentation/Screenshots/complete-setup.png)
 
 ### Working Demo Video
 
