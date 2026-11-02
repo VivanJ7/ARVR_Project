@@ -1,18 +1,29 @@
-# AR/VR Project – Unity-Based Interactive Simulation
+# 🎢 Roller Coaster Simulation – Unity 6
+
+An interactive 3D roller coaster simulation built using **Unity 6**, featuring a custom-designed track, animated coaster cart, immersive camera views, and ESP32-based hardware communication.
 
 ## Overview
 
-This project is an academic AR/VR implementation developed using Unity 6 and C#. The project focuses on creating an interactive 3D environment in Unity and demonstrating real-time control of object orientation.
+This project recreates a roller coaster ride in a 3D environment. The coaster cart follows a custom track through different turns, slopes, and elevation changes, creating an interactive ride experience.
 
-The Unity application communicates with an ESP32 over a network connection using UDP communication. The received orientation data can be used to control the physical prototype.
+The simulation also communicates with an ESP32 over Wi-Fi using UDP packets, allowing the coaster's motion data to be transmitted to an external hardware setup.
 
-## Objectives
+## Features
 
-- Develop an interactive 3D simulation using Unity.
-- Implement real-time rotation along the X, Y, and Z axes.
-- Establish communication between Unity and an ESP32.
-- Demonstrate UDP-based communication between the software and hardware.
-- Integrate the Unity simulation with a physical prototype.
+- **Custom Roller Coaster Track** – A 3D track with slopes, turns, drops, and elevation changes.
+- **Animated Coaster Cart** – A cart that moves along the track with dynamic speed and motion.
+- **First-Person View** – Experience the ride from the front seat of the coaster.
+- **Overview Camera** – Switch to an external view to observe the entire ride.
+- **3D Environment** – Includes terrain, vegetation, scenery, and supporting structures.
+- **ESP32 Communication** – Sends coaster motion data to an ESP32 using UDP communication.
+- **Motion Control** – Transmits pitch, roll, and yaw values based on the cart's position along the track.
+
+## Controls
+
+| Key | Function |
+|---|---|
+| C | Toggle between first-person and overview camera |
+| R | Toggle ESP32 home mode |
 
 ## Technologies Used
 
@@ -20,90 +31,56 @@ The Unity application communicates with an ESP32 over a network connection using
 - C#
 - ESP32
 - UDP Communication
-- Visual Studio Code
-
-## Project Features
-
-- Interactive 3D object simulation.
-- Rotation control along three axes:
-  - X-axis
-  - Y-axis
-  - Z-axis
-- Reset functionality to return the object to its original orientation.
-- Unity-to-ESP32 communication using UDP.
-- Hardware control through the ESP32.
-- Demonstration of software-to-hardware interaction.
+- Unity Input System
 
 ## Project Structure
 
 ```text
-ARVR_Project_Ini/
+ARVR_Project/
 │
 ├── Assets/
+│   ├── Materials/
+│   ├── Pure Poly/
 │   ├── Scenes/
-│   ├── Scripts/
-│   ├── Settings/
-│   └── ESP32UDPSender.cs
+│   │   └── RollerCoasterScene.unity
+│   └── Scripts/
+│       ├── RollerCoaster/
+│       │   ├── RollerCoasterBuilder.cs
+│       │   ├── RollerCoasterCameraController.cs
+│       │   ├── RollerCoasterCartController.cs
+│       │   └── RollerCoasterEnvironment.cs
+│       ├── CubeController.cs
+│       └── ESP32UDPSender.cs
 │
 ├── Packages/
-│
 ├── ProjectSettings/
-│
-├── Documentation/
-│   ├── Screenshots/
-│   └── Videos/
-│
 └── README.md
 ```
-## Screenshots
 
-### Unity Simulation
+## Getting Started
 
-![Unity Simulation](Documentation/Screenshots/unity_screen_1.png)
+1. Clone or download this repository.
+2. Install **Unity 6** using Unity Hub.
+3. Open the project through Unity Hub.
+4. Navigate to `Assets/Scenes/RollerCoasterScene.unity`.
+5. Open the scene and press **Play** to start the simulation.
 
-### 3D Environment
+## ESP32 Communication
 
-![3D Environment](Documentation/Screenshots/unity_screen_2.png)
+The Unity application communicates with an ESP32 over a Wi-Fi network using UDP.
 
-### Hardware Prototype
+During the simulation, the application calculates the coaster's motion angles and transmits pitch, roll, and yaw values to the ESP32.
 
-![Hardware Prototype](Documentation/Screenshots/IMG20260920014640.png)
+These values can be used by an external hardware setup to reproduce the corresponding movements.
 
-## Demonstration Videos
+## Demonstration
 
-The project demonstrations are available in the `Documentation/Videos` folder.
+Screenshots and project demonstration videos can be added here.
 
-- [Implementation Demo 1](Documentation/Videos/implementation_video_1.mp4)
-- [Implementation Demo 2](Documentation/Videos/implementation_video_2.mp4)
+## Repository
 
-## How to Run
+**GitHub:** [ARVR_Project](https://github.com/VivanJ7/ARVR_Project)
 
-1. Install Unity 6.
-2. Clone this repository.
-3. Open the project using Unity Hub.
-4. Open the main scene:
+---
 
-   `Assets/Scenes/SampleScene.unity`
-
-5. Enter Play Mode to run the Unity simulation.
-6. For hardware communication, connect the ESP32 and configure the required network settings.
-
-## Hardware
-
-The hardware component uses an ESP32 to receive control information from the Unity application.
-
-The physical prototype demonstrates the corresponding orientation movements generated by the Unity simulation.
-
-## Documentation
-
-Additional screenshots and demonstration videos are available in:
-
-```text
-Documentation/
-├── Screenshots/
-└── Videos/
-```
-
-## Academic Project
-
-This project was developed as part of an academic AR/VR course project.
+*Built with Unity 6 and C#.*
