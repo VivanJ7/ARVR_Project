@@ -10,7 +10,6 @@ public class CubeController : MonoBehaviour
     [Header("Rotation Settings")]
     public float rotationSpeed = 70f;
     public float maxAngle = 50f;
-
     // Starting orientations
     private Vector3 xStartRotation;
     private Vector3 yStartRotation;
