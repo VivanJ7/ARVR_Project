@@ -1,22 +1,52 @@
 # 🎢 Roller Coaster Simulation – Unity 6
 
-An interactive 3D roller coaster simulation built using **Unity 6**, featuring a custom-designed track, animated coaster cart, immersive camera views, and ESP32-based hardware communication.
+An interactive 3D roller coaster experience developed using **Unity 6.6**, featuring a custom track, animated coaster cart, immersive camera views, and ESP32-based hardware integration.
 
 ## Overview
 
-This project recreates a roller coaster ride in a 3D environment. The coaster cart follows a custom track through different turns, slopes, and elevation changes, creating an interactive ride experience.
+This project recreates a roller coaster ride in a 3D environment. The cart moves along a custom-designed track featuring slopes, turns, drops, and elevation changes.
 
-The simulation also communicates with an ESP32 over Wi-Fi using UDP packets, allowing the coaster's motion data to be transmitted to an external hardware setup.
+The Unity application also communicates with an ESP32 over Wi-Fi using UDP, transmitting motion data that can be used to control a physical three-servo platform.
 
 ## Features
 
-- **Custom Roller Coaster Track** – A 3D track with slopes, turns, drops, and elevation changes.
-- **Animated Coaster Cart** – A cart that moves along the track with dynamic speed and motion.
-- **First-Person View** – Experience the ride from the front seat of the coaster.
-- **Overview Camera** – Switch to an external view to observe the entire ride.
-- **3D Environment** – Includes terrain, vegetation, scenery, and supporting structures.
-- **ESP32 Communication** – Sends coaster motion data to an ESP32 using UDP communication.
-- **Motion Control** – Transmits pitch, roll, and yaw values based on the cart's position along the track.
+- **Custom Roller Coaster Track** – A track featuring multiple turns, slopes, and elevation changes.
+- **Dynamic Cart Movement** – A coaster cart that follows the track with changing speed and orientation.
+- **First-Person Camera** – Experience the ride from the front seat.
+- **Overview Camera** – Switch to an external view of the entire track.
+- **3D Environment** – Detailed surroundings with terrain, vegetation, mountains, and scenery.
+- **ESP32 Integration** – Wireless communication between Unity and ESP32 using UDP.
+- **Motion Data Transmission** – Pitch, roll, and yaw values generated from the coaster's movement.
+
+## Demonstration
+
+### Roller Coaster Environment
+
+The simulation features a custom-built track surrounded by a 3D environment.
+
+![Roller Coaster Track Overview](Documentation/Screenshots/track-overview.png)
+
+### Software Integration
+
+Unity communicates with the ESP32 through UDP, transmitting motion values during the simulation.
+
+![Unity and Arduino Integration](Documentation/Screenshots/software-integration.png)
+
+### Physical Hardware Prototype
+
+The physical setup uses an ESP32 and three servo motors arranged in a three-degree-of-freedom platform.
+
+![Physical Hardware Prototype](Documentation/Screenshots/hardware-prototype.jpg)
+
+### Complete Setup
+
+The Unity simulation and physical hardware setup working together.
+
+![Complete Hardware and Software Setup](Documentation/Screenshots/complete-setup.jpg)
+
+### Working Demo Video
+
+[▶ Watch the Roller Coaster Demonstration](Documentation/Videos/roller-coaster-demo.mp4)
 
 ## Controls
 
@@ -27,11 +57,13 @@ The simulation also communicates with an ESP32 over Wi-Fi using UDP packets, all
 
 ## Technologies Used
 
-- Unity 6
+- Unity 6.6
 - C#
 - ESP32
+- Arduino IDE
 - UDP Communication
 - Unity Input System
+- SG90 Servo Motors
 
 ## Project Structure
 
@@ -52,6 +84,10 @@ ARVR_Project/
 │       ├── CubeController.cs
 │       └── ESP32UDPSender.cs
 │
+├── Documentation/
+│   ├── Screenshots/
+│   └── Videos/
+│
 ├── Packages/
 ├── ProjectSettings/
 └── README.md
@@ -60,27 +96,21 @@ ARVR_Project/
 ## Getting Started
 
 1. Clone or download this repository.
-2. Install **Unity 6** using Unity Hub.
+2. Install Unity 6.6 using Unity Hub.
 3. Open the project through Unity Hub.
 4. Navigate to `Assets/Scenes/RollerCoasterScene.unity`.
-5. Open the scene and press **Play** to start the simulation.
+5. Open the scene and press **Play**.
 
 ## ESP32 Communication
 
-The Unity application communicates with an ESP32 over a Wi-Fi network using UDP.
+The Unity application calculates the coaster's motion and transmits pitch, roll, and yaw values to the ESP32 over Wi-Fi using UDP packets.
 
-During the simulation, the application calculates the coaster's motion angles and transmits pitch, roll, and yaw values to the ESP32.
-
-These values can be used by an external hardware setup to reproduce the corresponding movements.
-
-## Demonstration
-
-Screenshots and project demonstration videos can be added here.
+The ESP32 receives these values and uses them to control the servo motors of the physical platform.
 
 ## Repository
 
-**GitHub:** [ARVR_Project](https://github.com/VivanJ7/ARVR_Project)
+[GitHub – ARVR_Project](https://github.com/VivanJ7/ARVR_Project)
 
 ---
 
-*Built with Unity 6 and C#.*
+*Built using Unity 6.6, C#, and ESP32.*
